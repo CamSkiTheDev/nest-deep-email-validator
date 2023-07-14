@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import * as domains from 'disposable-email-domains';
+import domains from 'disposable-email-domains';
 const disposableDomains: Set<string> = new Set(domains);
 
 @Injectable()
