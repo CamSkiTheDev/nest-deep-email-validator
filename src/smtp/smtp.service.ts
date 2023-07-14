@@ -40,7 +40,6 @@ export class SmtpService {
     sender: string,
     recipient: string,
     exchange: string,
-    helo?: string,
   ): Promise<OutputFormat> {
     const timeout = 1000 * 10; // 10 seconds
 
@@ -90,7 +89,7 @@ export class SmtpService {
       });
 
       const commands = [
-        `helo ${helo || exchange}\r\n`,
+        `helo ${exchange}\r\n`,
         `mail from: <${sender}>\r\n`,
         `rcpt to: <${recipient}>\r\n`,
       ];

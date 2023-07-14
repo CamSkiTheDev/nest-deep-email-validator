@@ -25,6 +25,8 @@ export class DnsService {
         priorityMxIndex = i;
     }
 
+    console.log(mxAddresses);
+
     return mxAddresses[priorityMxIndex];
   }
 }

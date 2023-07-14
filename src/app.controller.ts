@@ -1,12 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Put } from '@nestjs/common';
 import { AppService } from './app.service';
+import { ValidateEmailDto } from './dto/validate-email.dto';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): any {
-    return this.appService.getHello();
+  @Put()
+  getHello(@Body() body: ValidateEmailDto): any {
+    return this.appService.getHelo(body);
   }
 }
